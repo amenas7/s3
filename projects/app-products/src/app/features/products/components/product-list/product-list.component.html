@@ -22,10 +22,21 @@
                       <td class="price">{{ product.price | currency}}</td>
                       <td>{{ product.category}}</td>
                       <td class="text-center">
-                        <a class="btn btn-sm btn-outline-secondary me-2" [routerLink]="['/products/details/',product.id]"  title="Details" >
+                        <!-- <a class="btn btn-sm btn-outline-secondary me-2" [routerLink]="['/products/details/',product.id]"  title="Details" >
                           <i class="bi bi-pen-fill"></i>
+                        </a> -->
+                        <a class="btn btn-sm btn-outline-secondary me-2"
+                          [mfRouterLink]="['products/details/'+product.id]"
+                          [routerLinkActive]="['active-link']"
+                          [queryParams]="{title:product.title}"
+                          title="Details" >
+                          <i class="bi bi-pen-fill"></i> Details
                         </a>
                       </td>
+                      <td>
+                        <button type="button" (click)="reservar(product)" class="btn btn-warning">Reservar</button>
+                       <!-- <button type="button" (click)="details(product)" class="btn btn-warning">Details</button> -->
+                     </td>
                   </tr>
                 }
               </tbody>

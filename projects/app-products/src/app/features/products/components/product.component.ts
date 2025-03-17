@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MFRouterLinkDirective } from '../../../shared/directives/MFRouterLinkDirective';
 
 @Component({
   selector: 'app-product',
   imports: [
-    RouterOutlet
+    RouterOutlet,
+    RouterLink,
+    MFRouterLinkDirective
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'

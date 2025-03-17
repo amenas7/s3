@@ -4,18 +4,11 @@ module.exports = withNativeFederation({
 
   name: 'appProducts',
 
-  // exponiendo un componente
-  // exposes: {
-  //   './Component': './projects/app-products/src/app/app.component.ts',
-  // },
-
   // exponiendo una ruta hija
   exposes: {
     './Component': './projects/app-products/src/app/app.component.ts',
     './routes': './projects/app-products/src/app/app.routes.ts',
   },
-
-
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
