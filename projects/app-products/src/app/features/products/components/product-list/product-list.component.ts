@@ -36,8 +36,7 @@ export class ProductListComponent implements OnInit{
 
   reservar(product:IProduct){
      window.dispatchEvent(
-      //new CustomEvent('mfProductReserved', {
-        new CustomEvent(GLOBAL_MFA_PRODUCTS_EVENTS.PRODUCT_RESERVED_EVENT, {
+      new CustomEvent(GLOBAL_MFA_PRODUCTS_EVENTS.PRODUCT_RESERVED_EVENT, {
         detail: {
           product:product,
           quantity:1

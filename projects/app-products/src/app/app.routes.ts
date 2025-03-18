@@ -23,7 +23,7 @@ export const routes: Routes = [
     },
 
     { path: '',
-        redirectTo: 'products/list',
+        redirectTo: 'products',
         pathMatch: 'full'
     },
     { path: '**',

@@ -3,8 +3,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { IProduct } from '../../../app-products/src/app/features/products/models/i-product';
 import { JsonPipe } from '@angular/common';
-// import { ProductComponent } from '../../../app-products/src/app/features/products/components/components/product/product.component';
-import { ProductComponent } from '../../../app-products/src/app/features/products/components/product.component';
+import { ProductComponent } from '../../../app-products/src/app/features/products/components/components/product/product.component';
 
 @Component({
   selector: 'app-root',
@@ -29,50 +28,29 @@ export class AppComponent implements OnInit{
   quantity:number=0;
 
   ngOnInit(): void {
-
-      /*
-      console.log('ngOnInit...')
-
-      loadRemoteModule('appProducts', './Component').then((m) => {
-        const ce = createCustomElement(
-          m.AppComponent, {
-            injector: this.injector
-          }
-        );
-
-        if (!customElements.get('app-root')) {
-
-
-          customElements.define('mfe-app-products', ce); // Rendirización
-        }
-
-      }).catch((err:any) => console.log(err));
-       */
-      window.isHost = true;
-      window.language='es';
-
+    window.isHost = true;
+    window.language='es';
   }
 
   @HostListener('window:mfRouteChanged', ['$event'])
-     onMFChildRouteChanged(event: any) {
-      console.log('Host window:mfRouteChanged...')
-      console.log(event.detail.route)
-      console.log(event.detail.extras)
+  onMFChildRouteChanged(event: any) {
+  console.log('Host window:mfRouteChanged...')
+  console.log(event.detail.route)
+  console.log(event.detail.extras)
 
-      this.router.navigate([event.detail.route], event.detail.extras);
-     }
+  this.router.navigate([event.detail.route], event.detail.extras);
+  }
 
-     @HostListener('window:mfProductReserved', ['$event'])
-     onMFProductReserved(event: any) {
 
-      console.log('Host window:mfProductReserved...')
-      console.log(event.detail.product)
-      console.log(event.detail.quantity)
+  @HostListener('window:mfProductReserved', ['$event'])
+  onMFProductReserved(event: any) {
+  console.log('Host window:mfProductReserved...')
+  console.log(event.detail.product)
+  console.log(event.detail.quantity)
 
-      this.product=event.detail.product
-      this.quantity=event.detail.quantity
-
-    }
+  this.product=event.detail.product
+  this.quantity=event.detail.quantity
+  }
 
      
 }

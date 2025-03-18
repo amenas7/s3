@@ -1,46 +1,46 @@
 <div class="container">
-    <div class="row">
-      <div class="col-12 table-responsive">
-          <table class="table table-bordered table-desing tabla-hover">
-              <thead>
-                  <tr>
-                      <th scope="col" width="50">#</th>
-                      <th scope="col">Id</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Category</th>
-                      <th scope="col" class="text-center" width="90">Acción</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <!-- @for (product of products; track $index) {-->
-                  @for (product of products$ | async; track $index) {
-                  <tr >
-                      <th scope="row">{{$index+1}}</th>
-                      <td>{{ product.id }}</td>
-                      <td>{{ product.title }}</td>
-                      <td class="price">{{ product.price | currency}}</td>
-                      <td>{{ product.category}}</td>
-                      <td class="text-center">
-                        <!-- <a class="btn btn-sm btn-outline-secondary me-2" [routerLink]="['/products/details/',product.id]"  title="Details" >
-                          <i class="bi bi-pen-fill"></i>
-                        </a> -->
-                        <a class="btn btn-sm btn-outline-secondary me-2"
-                          [mfRouterLink]="['products/details/'+product.id]"
-                          [routerLinkActive]="['active-link']"
-                          [queryParams]="{title:product.title}"
-                          title="Details" >
-                          <i class="bi bi-pen-fill"></i> Details
-                        </a>
-                      </td>
-                      <td>
-                        <button type="button" (click)="reservar(product)" class="btn btn-warning">Reservar</button>
-                       <!-- <button type="button" (click)="details(product)" class="btn btn-warning">Details</button> -->
-                     </td>
-                  </tr>
-                }
-              </tbody>
-          </table>
-      </div>
+  <div class="row">
+    <div class="col-12 table-responsive">
+        <table class="table table-bordered table-desing tabla-hover">
+            <thead>
+                <tr>
+                    <th scope="col" width="50">#</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Category</th>
+                    <th scope="col" colspan="2" class="text-center" width="190">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+              <!-- @for (product of products; track $index) {-->
+                @for (product of products$ | async; track $index) {
+                <tr >
+                    <th scope="row">{{$index+1}}</th>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.title }}</td>
+                    <td class="price">{{ product.price | currency}}</td>
+                    <td>{{ product.category}}</td>
+                    <td class="text-center">
+                      <!-- [queryParams]="{id:product.id}"  [routerLinkActive]=-->
+                      <a class="btn btn-sm btn-outline-secondary me-2"
+                        [mfRouterLink]="['products/details/'+product.id]"
+                        [routerLinkActive]="['active-link']"
+                        [queryParams]="{title:product.title}"
+                        title="Details" >
+                        <i class="bi bi-pen-fill"></i> Details
+                      </a>
+
+                    </td>
+                    <td>
+                       <button type="button" (click)="reservar(product)" class="btn btn-warning">Reservar</button>
+                      <!-- <button type="button" (click)="details(product)" class="btn btn-warning">Details</button> -->
+
+                    </td>
+                </tr>
+              }
+            </tbody>
+        </table>
     </div>
   </div>
+</div>

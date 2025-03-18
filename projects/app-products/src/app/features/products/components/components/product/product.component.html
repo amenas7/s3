@@ -1,0 +1,19 @@
+cpm
+<!-- <br>
+<span>
+Data x : {{data()}}
+
+Product x : {{product() | json}}
+</span> -->
+@let item=product();
+@if(item){
+  <div class="card" style="width: 18rem;">
+    <img src="{{item?.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ item?.title}}</h5>
+      <p class="card-text">{{item?.description}}</p>
+      <a href="#" class="btn btn-secondary">Go</a>
+    </div>
+  </div>
+}
+
