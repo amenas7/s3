@@ -2,7 +2,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, inject, Injector, OnIn
 import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { IProduct } from '../../../app-products/src/app/features/products/models/i-product';
-import { JsonPipe } from '@angular/common';
 import { ProductComponent } from '../../../app-products/src/app/features/products/components/components/product/product.component';
 
 @Component({
@@ -10,7 +9,6 @@ import { ProductComponent } from '../../../app-products/src/app/features/product
   imports: [
     RouterOutlet,
     NavbarComponent,
-    JsonPipe,
     ProductComponent
   ],
   templateUrl: './app.component.html',

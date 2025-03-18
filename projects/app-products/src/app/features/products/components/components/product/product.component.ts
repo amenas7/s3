@@ -1,12 +1,9 @@
 import { Component, input, OnInit } from '@angular/core';
 import { IProduct } from '../../../models/i-product';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-component',
-  imports: [
-    JsonPipe
-  ],
+  imports: [],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
